@@ -1,0 +1,55 @@
+/* Contenedor de la tarjeta */
+.card {
+    background-color: #0a0f0d; /* Negro oscuro */
+    color: #b8f1c1; /* Verde suave */
+    border: 1px solid #1c3729; /* Borde verde oscuro */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Sombra oscura */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Efecto hover en la tarjeta */
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Imagen en el carrusel */
+  .carousel-inner img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px; /* Ajustar altura */
+    object-fit: cover;
+  }
+  
+  /* Título de la tarjeta */
+  .card-title {
+    font-size: 1.5rem;
+    color: #4eff8f; /* Verde brillante */
+    font-weight: bold;
+  }
+  
+  /* Texto descriptivo de la tarjeta */
+  .card-text {
+    color: #a6dab1; /* Verde suave */
+    font-size: 1rem;
+  }
+  
+  /* Footer con botón */
+  .card-footer {
+    background-color: #0a0f0d; /* Mismo fondo que la tarjeta */
+    border-top: 1px solid #1c3729;
+  }
+  
+  .card-footer .btn {
+    background-color: #1c3729; /* Verde oscuro */
+    color: #b8f1c1; /* Verde suave */
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card-footer .btn:hover {
+    background-color: #4eff8f; /* Verde brillante */
+    color: #0a0f0d; /* Texto oscuro */
+  }
+  
