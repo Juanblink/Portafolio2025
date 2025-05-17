@@ -1,34 +1,59 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID, AfterViewInit, NgZone } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import Lenis from '@studio-freight/lenis';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
-import { ProjectsComponent } from './projects/projects.component'; // Importar ProjectsComponent
+import { ProjectsComponent } from './projects/projects.component';
 import { TimelineComponent }  from './timeline/timeline.component';
 import { AboutMeComponent } from './about-me/about-me.component';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NavbarComponent,HomeComponent,ProjectsComponent,TimelineComponent,AboutMeComponent],
+  imports: [NavbarComponent, HomeComponent, ProjectsComponent, TimelineComponent, AboutMeComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+export class AppComponent implements OnInit, AfterViewInit {
+  private lenis!: Lenis;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private ngZone: NgZone) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      // Solo ejecutar en el navegador
       this.initCanvasBackground();
     }
   }
 
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.initLenis();
+    }
+  }
+
+  private initLenis() {
+    this.lenis = new Lenis({
+      lerp: 0.1,
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    this.ngZone.runOutsideAngular(() => {
+      const raf = (time: number) => {
+        this.lenis.raf(time);
+        requestAnimationFrame(raf);
+      };
+      requestAnimationFrame(raf);
+    });
+  }
+
   private initCanvasBackground() {
     const canvas = document.getElementById('animated-background') as HTMLCanvasElement;
+    if (!canvas) return;
     const ctx = canvas.getContext('2d')!;
     const points: { x: number; y: number; vx: number; vy: number }[] = [];
     const mouse = { x: 0, y: 0, active: false };
@@ -36,7 +61,6 @@ export class AppComponent implements OnInit {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Crear puntos
     for (let i = 0; i < 100; i++) {
       points.push({
         x: Math.random() * canvas.width,
@@ -46,7 +70,6 @@ export class AppComponent implements OnInit {
       });
     }
 
-    // Dibujar puntos y líneas
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
