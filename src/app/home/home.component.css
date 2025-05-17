@@ -1,143 +1,133 @@
-/* Contenedor principal */
 .home-container {
-    text-align: left;
-    color: white;
-    margin-top: 100px;
+  max-width: 900px;         /* Limita el ancho máximo para buena lectura */
+  margin: 100px auto 0 auto; /* Centrado horizontal, margen superior grande */
+  padding: 0 20px;          /* Espacio lateral en móviles */
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;             /* Espaciado vertical entre elementos */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 70vh;        /* Ocupa gran parte de la altura visible */
+  justify-content: center; /* Centra verticalmente dentro del espacio */
+}
+
+/* H1 - saludo */
+.home-container h1 {
+  font-size: 3.5rem;       /* Más grande */
+  font-weight: 900;
+  margin-bottom: 0;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: #4caf50;          /* Verde brillante */
+}
+
+.wave {
+  font-size: 3.5rem;       /* Emoji más grande para impacto */
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* H2 - rol + descripción */
+.home-container h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #b8f1c1;          /* Verde suave */
+}
+
+.home-container h2 .description {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #a6dab1;          /* Verde claro suave */
+  margin-top: 5px;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* Contenedor botones */
+.actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.actions .btn {
+  padding: 14px 28px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4);
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Resume botón - borde verde */
+.actions .btn.resume {
+  background-color: transparent;
+  border: 3px solid #4caf50;
+  color: #4caf50;
+}
+
+.actions .btn.resume:hover {
+  background-color: #4caf50;
+  color: #0a0f0d;
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.7);
+}
+
+/* Portfolio botón - fondo verde */
+.actions .btn.portfolio {
+  background-color: #4caf50;
+  color: #0a0f0d;
+}
+
+.actions .btn.portfolio:hover {
+  background-color: #3e8e41;
+  box-shadow: 0 6px 15px rgba(62, 142, 65, 0.7);
+  color: #e6ffe6;
+}
+
+/* Iconos dentro de botones */
+.actions .btn i {
+  font-size: 1.3rem;
+}
+
+/* Responsive para móvil */
+@media (max-width: 600px) {
+  .home-container {
+    min-height: auto;
+    margin-top: 60px;
+    padding: 0 15px;
   }
-  
-  /* H1 - Estilo para el saludo */
+
   .home-container h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 15px;
+    font-size: 2.8rem;
   }
-  
-  .highlight {
-    color: #4caf50; /* Verde brillante */
-  }
-  
-  .wave {
-    font-size: 2.5rem; /* Tamaño grande para el emoji */
-  }
-  
-  /* H2 - Rol y descripción */
+
   .home-container h2 {
     font-size: 1.8rem;
-    font-weight: 900; /* Más bold */
-    margin-bottom: 20px;
   }
-  
+
   .home-container h2 .description {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: normal;
-    color: #ccc;
-  }
-  
-  /* Botones de acción */
-  .actions {
-    margin-top: 20px;
-  }
-  
-  .actions .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 0 10px;
     font-size: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    transition: all 0.3s ease;
   }
-  
-  .actions .btn.resume {
-    background-color: transparent;
-    border: 2px solid #4caf50;
-    color: #4caf50;
-  }
-  
-  .actions .btn.resume:hover {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  .actions .btn.portfolio {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  .actions .btn.portfolio:hover {
-    background-color: #3e8e41; /* Más oscuro al pasar el mouse */
-  }
-  
-  /* Contenedor del texto animado */
-  #typing-effect {
-    display: inline-block;
-    font-size: 2rem;
-    font-weight: 700; /* Más bold */
-    color: #00ff00; /* Verde brillante */
-    border-right: 2px solid white; /* Cursor */
-    white-space: nowrap; /* Evita que el texto haga salto de línea */
-    overflow: hidden; /* Oculta el contenido mientras se escribe */
-    max-width: 12ch; /* Limita el ancho del texto a su tamaño máximo */
-    animation: blink 0.7s steps(2, start) infinite;
-  }
-  
-  /* Efecto de parpadeo del cursor */
-  @keyframes blink {
-    from {
-      border-right-color: white;
-    }
-    to {
-      border-right-color: transparent;
-    }
-  }
-  
-  /* Contenedor de los íconos sociales */
-  .social-icons {
-    display: flex;
-    justify-content: center;
+
+  .actions {
+    flex-direction: column;
     gap: 15px;
-    margin: 20px 0;
   }
-  
-  /* Estilo general de los íconos */
-  .social-icons .icon {
-    display: inline-block;
-    font-size: 2rem;
-    color: #4caf50; /* Verde uniforme para todos */
-    text-decoration: none;
-    transition: transform 0.3s, color 0.3s;
+
+  .actions .btn {
+    width: 100%;
+    justify-content: center;
   }
-  
-  /* Hover para todos los íconos */
-  .social-icons .icon:hover {
-    transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
-    color: #00ff00; /* Verde brillante al hacer hover */
-  }
-  
-  /* Contenedor de trabajos importantes */
-  .work-info {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 1.1rem;
-    color: #ccc;
-  }
-  
-  .work-info p {
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
-  }
-  
-  .client-logos img {
-    height: 80px;
-    object-fit: contain; /* Mantiene las proporciones */
-    transition: transform 0.3s ease;
-  }
-  
-  .client-logos img:hover {
-    transform: scale(1.1); /* Efecto al pasar el mouse */
-  }
+}

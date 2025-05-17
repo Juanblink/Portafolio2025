@@ -1,0 +1,181 @@
+/* timeline.component.css */
+
+/* Contenedor y aparición */
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  opacity: 0;
+  animation: fadeInContainer 800ms ease-out forwards;
+  z-index: 1;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Sombra oscura */
+}
+
+@keyframes fadeInContainer {
+  to { opacity: 1; }
+}
+
+/* Línea central */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%; transform: translateX(-50%);
+  width: 4px;
+  background: linear-gradient(
+    to bottom,
+    #b8f1c1,           /* Verde suave */
+    #1c3729 50%,       /* Verde oscuro */
+    #b8f1c1
+  );
+  z-index: 0;
+}
+
+/* Items */
+.timeline-item {
+  position: relative; z-index: 1;
+  width: 50%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeSlideIn 600ms ease-out forwards;
+  transition: transform 0.3s ease;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Sombra oscura */
+  color: #b8f1c1; /* Verde suave */
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Wrapper sección */
+.timeline-section {
+  min-height: auto;
+  padding: 4rem 1rem;
+}
+
+.timeline-wrapper {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.timeline-wrapper .timeline {
+  display: block;
+  gap: 2rem;
+}
+
+/* Alternar lado */
+.timeline-item.left  { left: 0;  text-align: right; }
+.timeline-item.right { left: 50%; text-align: left;  }
+
+/* Círculo indicador */
+.timeline-item .circle {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 32px; height: 32px;
+
+  background: #0a0f0d; /* Fondo negro oscuro */
+  border: 3px solid #1c3729; /* Borde verde oscuro */
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 8px rgba(28, 55, 41, 0.6); /* Sombra verde oscuro */
+  transition: transform 0.3s ease;
+  z-index: 2;
+
+  color: #b8f1c1; /* Verde suave */
+}
+
+.timeline-item.left  .circle { right: -19px; }
+.timeline-item.right .circle { left:  -19px; }
+
+@keyframes pulseGlow {
+  from { box-shadow: 0 0 8px rgba(28, 55, 41, 0.6); }
+  to   { box-shadow: 0 0 16px rgba(28, 55, 41, 0.8); }
+}
+
+.timeline-item:hover .circle {
+  animation: pulseGlow 1.2s ease-in-out infinite alternate;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.timeline-item .circle i {
+  font-size: 1.2rem;
+  color: #b8f1c1; /* Verde suave */
+  line-height: 1;
+}
+
+/* Tarjeta de contenido */
+.timeline-item .content {
+  background: rgba(10, 15, 13, 0.6); /* Fondo negro oscuro semi-transparente */
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  max-width: 320px;
+  border: 1px solid #1c3729; /* Borde verde oscuro */
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+@keyframes borderPulse {
+  from {
+    border-color: #1c3729;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  }
+  to {
+    border-color: #b8f1c1;
+    box-shadow: 0 0 12px rgba(184, 241, 193, 0.6);
+  }
+}
+
+.timeline-item:hover .content {
+  animation: borderPulse 0.6s ease forwards;
+}
+
+/* Tipografía */
+.timeline-item .date {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #b8f1c1; /* Verde suave */
+  margin-bottom: 0.25rem;
+}
+
+.timeline-item .title {
+  font-size: 1.2rem;
+  margin: 0.25rem 0 0.75rem;
+  color: #4eff8f; /* Verde suave */
+}
+
+.timeline-item .description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #b8f1c1; /* Verde suave */
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .timeline-container::before { left: 8px; }
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0 !important;
+    width: 100%;
+    text-align: left;
+    padding-left: 3rem;
+    margin-bottom: 2rem;
+  }
+  .timeline-item .circle {
+    left: -24px !important;
+  }
+}

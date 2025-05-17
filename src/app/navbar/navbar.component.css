@@ -1,24 +1,45 @@
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    z-index: 1000;
-  }
-  
-  .navbar a {
-    margin: 0 15px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  .navbar a:hover {
-    color: #00ff00; /* Verde para destacar */
-  }
-  
+.navbar-floating {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0a0f0d; /* Negro oscuro */
+  border: 1px solid #1c3729; /* Borde verde oscuro */
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(28, 55, 41, 0.7);
+  display: flex;
+  justify-content: space-around;
+  width: 260px;
+  padding: 10px 0;
+  z-index: 10000;
+  user-select: none;
+}
+
+.nav-link {
+  color: #b8f1c1; /* Verde suave */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: 
+    color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #4eff8f; /* Verde brillante */
+  background-color: #1c3729; /* Verde oscuro */
+  transform: translateY(-3px);
+  outline: none;
+  cursor: pointer;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}

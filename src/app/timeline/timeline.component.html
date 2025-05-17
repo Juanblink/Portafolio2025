@@ -1,0 +1,18 @@
+<div class="timeline-container">
+  <div
+    class="timeline-item"
+    *ngFor="let event of events; let i = index"
+    [ngClass]="{ 'left': i % 2 === 0, 'right': i % 2 !== 0 }"
+    [style.animationDelay]="(i * 150) + 'ms'">
+
+    <div class="content">
+      <span class="date">{{ event.date }}</span>
+      <h3 class="title">{{ event.title }}</h3>
+      <p class="description">{{ event.description }}</p>
+    </div>
+
+    <div class="circle">
+      <i [ngClass]="event.iconClass"></i>
+    </div>
+  </div>
+</div>

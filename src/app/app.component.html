@@ -1,44 +1,27 @@
 <!-- Fondo animado con Canvas -->
 <canvas id="animated-background"></canvas>
 
-<!-- Componente Navbar -->
-<app-navbar></app-navbar>
+<!-- Navegación -->
+<header>
+  <app-navbar></app-navbar>
+</header>
 
-<!-- Contenedor principal -->
-<div class="container">
-  <!-- Sección Inicio -->
-<!-- Componente Home -->
-  <section id="home" class="section home">
-    <app-home></app-home> <!-- Aquí usamos el componente Home -->
-  </section>
-  <section id="projects" class="section projects">
-    <app-projects></app-projects>
-  </section>
-  
-  <!-- Sección Sobre mí -->
-  <section id="about" class="section about">
-    <div class="about-container">
-      <h1>Sobre mí</h1>
-      <p>
-        Soy un desarrollador apasionado con experiencia en tecnologías web. Me gusta crear aplicaciones
-        innovadoras que resuelvan problemas reales.
-      </p>
-    </div>
-  </section>
+<!-- Sección: Home -->
+<section id="home" class="section home-section">
+  <app-home></app-home>
+</section>
 
+<!-- Sección: About Me -->
+<section id="about" class="section about-section">
+  <app-about-me></app-about-me>
+</section>
 
-  
-  
-  
+<!-- Sección: Proyectos -->
+<section id="projects" class="section projects-section">
+  <app-projects></app-projects>
+</section>
 
-  <!-- Sección Contacto -->
-  <section id="contact" class="section contact">
-    <h1>Contacto</h1>
-    <form class="contact-form">
-      <input type="text" placeholder="Nombre" class="form-control">
-      <input type="email" placeholder="Correo electrónico" class="form-control">
-      <textarea placeholder="Mensaje" class="form-control"></textarea>
-      <button type="submit" class="btn">Enviar</button>
-    </form>
-  </section>
-</div>
+<!-- Sección: Timeline -->
+<section id="timeline" class=" timeline-section">
+  <app-timeline></app-timeline>
+</section>

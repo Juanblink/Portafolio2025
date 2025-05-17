@@ -3,12 +3,17 @@ import { isPlatformBrowser } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component'; // Importar ProjectsComponent
+import { TimelineComponent }  from './timeline/timeline.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NavbarComponent,HomeComponent,ProjectsComponent],
+  imports: [NavbarComponent,HomeComponent,ProjectsComponent,TimelineComponent,AboutMeComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
