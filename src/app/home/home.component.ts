@@ -1,10 +1,12 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { ButtonHomeComponent } from '../button-home/button-home.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   standalone:true,
+  imports: [ButtonHomeComponent],
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {

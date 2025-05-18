@@ -130,4 +130,33 @@
     width: 100%;
     justify-content: center;
   }
+  
+}
+.contact-info {
+  margin-top: 24px;
+  font-size: 1rem;
+  text-align: left;
+  color: #b8f1c1;
+  font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+  line-height: 1.8;
+}
+
+.contact-info p {
+  margin: 10px 0;
+}
+
+.contact-info i {
+  margin-right: 8px;
+  color: #4eff8f;
+}
+
+.contact-info a {
+  color: #b8f1c1;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #4eff8f;
+  text-shadow: 0 0 5px #4eff8f;
 }

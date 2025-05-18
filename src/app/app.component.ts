@@ -7,11 +7,13 @@ import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { TimelineComponent }  from './timeline/timeline.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { ButtonHomeComponent } from './button-home/button-home.component';
+import { ContactComponent } from './contact/contact.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NavbarComponent, HomeComponent, ProjectsComponent, TimelineComponent, AboutMeComponent],
+  imports: [NavbarComponent, HomeComponent, ProjectsComponent, TimelineComponent, AboutMeComponent, ButtonHomeComponent,ContactComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
