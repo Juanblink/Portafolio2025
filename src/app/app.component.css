@@ -5,30 +5,49 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1; /* detrás de todo */
-  background-color: black; /* Fondo negro */
+  z-index: -1;
+  background-color: black;
+  pointer-events: none;
 }
 
+/* Secciones principales */
 .section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 90vh; /* Reduce el espacio entre secciones */
-  margin-bottom: -20px; /* Reduce separación vertical */
-}
-
-.timeline-section {
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: auto;
-  padding: 20px 0; /* Reduce el espacio superior e inferior */
-  margin-bottom: -20px; /* Junta aún más los elementos */
-}
-
-/* Ajusta márgenes globales de secciones */
-.container {
+  min-height: 90vh;
+  padding: 20px 10px;
+  box-sizing: border-box;
   margin: 0 auto;
-  padding: 10px 0;
+}
+
+/* Timeline section sin flex innecesario */
+.timeline-section {
+  width: 100%;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Contenedor global */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    min-height: auto;
+    padding: 15px 10px;
+  }
+
+  .timeline-section {
+    padding: 15px 10px;
+  }
 }

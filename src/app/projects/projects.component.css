@@ -22,22 +22,42 @@
 }
 
 /* Contenedor imagen: altura fija para mantener uniformidad */
+/* Aplicar el blur y posición relativa para poder colocar la leyenda */
 .image-container {
+  position: relative; /* necesario para posicionar la leyenda */
   width: 100%;
-  height: 400px; /* altura fija para todas las imágenes */
+  height: 400px;
   overflow: hidden;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
-/* Imagen ajustada, sin deformar */
+/* Imagen con blur */
 .image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* mantiene proporción y recorta */
+  object-fit: cover;
   display: block;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  filter: blur(10px); /* nivel de desenfoque */
+}
+
+/* Leyenda de privacidad */
+.image-container::after {
+  content: "Blurred for privacy reasons :(";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(10, 15, 13, 0.7); /* fondo semi-transparente */
+  color: #b8f1c1;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .title-section {
