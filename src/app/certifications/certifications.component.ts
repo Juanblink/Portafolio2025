@@ -13,7 +13,7 @@ export class CertificationsComponent {
     {
       id: 1,
       title: 'Scrum Fundamentals',
-      by: 'Scrum.org',
+      by: 'Scrumstudy',
       description: 'Certification that demonstrates understanding of the Scrum framework and agile project management principles.',
       images: [
         'https://i.postimg.cc/Fs1RkXb9/Scrum.jpg',

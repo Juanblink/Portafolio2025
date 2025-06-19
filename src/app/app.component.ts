@@ -64,10 +64,12 @@ private initCanvasBackground() {
 
   const pointCount = window.innerWidth < 768 ? 50 : 100; // Menos puntos en móviles
 
-  const resizeCanvas = () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  };
+const resizeCanvas = () => {
+  canvas.style.width = '100%';
+  canvas.style.height = '100%';
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+};
 
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
