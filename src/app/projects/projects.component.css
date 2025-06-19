@@ -42,10 +42,17 @@
   border-top-right-radius: 10px;
   filter: blur(10px); /* nivel de desenfoque */
 }
+.image-container.no-blur img {
+  filter: none;
+}
 
+.image-container.no-blur::after {
+  content: none;
+  background: none;
+}
 /* Leyenda de privacidad */
 .image-container::after {
-  content: "Blurred for privacy reasons :(";
+  content: "Blurred for privacy reasons";
 
   position: absolute;
   top: 50%;

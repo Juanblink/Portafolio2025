@@ -5,13 +5,17 @@
       <div class="col" *ngFor="let project of projects">
         <article class="card h-100 d-flex flex-column">
           <!-- Imagen fija -->
-          <div class="image-container">
-            <img
-              [src]="project.images[0]"
-              alt="Imagen del proyecto {{ project.title }}"
-              loading="lazy"
-            />
-          </div>
+<div
+  class="image-container"
+  [ngClass]="{ 'no-blur': project.id === 4 }"
+>
+  <img
+    [src]="project.images[0]"
+    alt="Imagen del proyecto {{ project.title }}"
+    loading="lazy"
+  />
+</div>
+
           <!-- Contenido de la tarjeta -->
           <div class="card-body flex-grow-1 d-flex flex-column">
             <h5 class="card-title">{{ project.title }}</h5>

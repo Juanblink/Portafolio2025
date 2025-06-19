@@ -11,7 +11,7 @@ export class ProjectsComponent {
   projects = [
     {
       id: 1,
-      title: 'System for Human Resources for a Motor Company',
+      title: 'System for Human Resources',
       description: 'Comprehensive Human Resources management system designed to efficiently handle all employee-related aspects. Includes modules for employee records management, uniform allocation and tracking, vacation requests and approvals, attendance monitoring, performance evaluations, and compliance management. Streamlines internal processes, enhances communication, and ensures complete organization of the company’s human capital..',
       images: [
         'https://i.postimg.cc/gk1X1Y1H/Menu.jpg',
@@ -27,7 +27,7 @@ export class ProjectsComponent {
     },
     {
       id: 3,
-      title: 'Proyect Ideando',
+      title: 'Proyect for Ideas',
       description: 'This project is a lightweight internal system designed for employees of a large company to submit and share their ideas. It includes features such as user roles, a points-based system, and proposal tracking.',
       images: [
         'https://i.postimg.cc/BZL1pLVn/Ideando.jpg',
@@ -35,12 +35,10 @@ export class ProjectsComponent {
     },
     {
       id: 4,
-      title: 'Project 4',
-      description: 'Descripción breve del proyecto 4.',
+      title: 'To do List Application',
+      description: 'A simple and intuitive todo list application to help users manage their tasks effectively.',
       images: [
-        'https://via.placeholder.com/400x200/ff7f7f/333333?text=Image+1',
-        'https://via.placeholder.com/400x200/85e085/333333?text=Image+2',
-        'https://via.placeholder.com/400x200/7f7fff/333333?text=Image+3',
+        'https://i.postimg.cc/1Rgj3TY0/Noteapss.jpg',
       ],
       
     }

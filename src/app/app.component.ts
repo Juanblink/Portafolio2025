@@ -9,11 +9,12 @@ import { TimelineComponent }  from './timeline/timeline.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ButtonHomeComponent } from './button-home/button-home.component';
 import { ContactComponent } from './contact/contact.component';
+import { CertificationsComponent } from './certifications/certifications.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NavbarComponent, HomeComponent, ProjectsComponent, TimelineComponent, AboutMeComponent, ButtonHomeComponent,ContactComponent],
+  imports: [NavbarComponent, HomeComponent, ProjectsComponent, TimelineComponent, AboutMeComponent, ButtonHomeComponent, ContactComponent, CertificationsComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

@@ -1,0 +1,115 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 1rem;
+}
+
+.card {
+  background-color: #0a0f0d;
+  color: #b8f1c1;
+  border: 1px solid #1c3729;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 480px; /* altura mínima para igualar todas */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 260px; /* altura fija para imagen */
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  flex-shrink: 0; /* para que no reduzca al ajustar */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #4eff8f;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-by {
+  font-size: 0.9rem;
+  color: #8fcf91;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.card-text {
+  color: #a6dab1;
+  font-size: 0.9rem;
+  overflow: auto; /* permite scroll si es muy largo */
+}
+
+.image-container.no-blur img {
+  filter: none;
+}
+
+.image-container.no-blur::after {
+  content: none;
+}
+
+.image-container::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(10, 15, 13, 0.7);
+  color: #b8f1c1;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #b8f1c1;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+}

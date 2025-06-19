@@ -1,0 +1,28 @@
+<section id="certifications" class="section certifications">
+  <div class="container">
+    <h1 class="section-title">Certifications</h1>
+    <div class="cards-container">
+      <article class="card" *ngFor="let cert of certifications">
+        <!-- Imagen fija, con opción de quitar blur si quieres -->
+        <div class="image-container no-blur">
+          <img
+            [src]="cert.images[0]"
+            alt="Image of certification {{ cert.title }}"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Contenido de la tarjeta -->
+        <div class="card-body">
+          <h5 class="card-title">{{ cert.title }}</h5>
+          <p class="card-by content:center">BY: {{ cert.by }}</p>
+          <p class="card-text">{{ cert.description }}</p>
+        </div>
+
+        <div class="card-footer">
+          <!-- Puedes agregar botones o links aquí -->
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
