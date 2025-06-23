@@ -1,28 +1,25 @@
 <section id="projects" class="section projects">
   <div class="container">
     <h1 class="title-section">Projects</h1>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col" *ngFor="let project of projects">
-        <article class="card h-100 d-flex flex-column">
-          <!-- Imagen fija -->
-<div
-  class="image-container"
-  [ngClass]="{ 'no-blur': project.id === 4 }"
->
-  <img
-    [src]="project.images[0]"
-    alt="Imagen del proyecto {{ project.title }}"
-    loading="lazy"
-  />
-</div>
+    <div class="cards-container">
+      <div class="card" *ngFor="let project of projects">
+        <!-- Imagen como fondo -->
+        <div
+          class="image-container"
+          [ngClass]="{ 'no-blur': project.id === 4 }"
+          [style.background-image]="'url(' + project.images[0] + ')'"
+        ></div>
 
-          <!-- Contenido de la tarjeta -->
-          <div class="card-body flex-grow-1 d-flex flex-column">
-            <h5 class="card-title">{{ project.title }}</h5>
-            <p class="card-text flex-grow-1">{{ project.description }}</p>
-          </div>
+        <!-- Contenido de la tarjeta -->
+        <div class="card-body">
+          <h5 class="card-title">{{ project.title }}</h5>
+          <p class="card-text">{{ project.description }}</p>
+        </div>
 
-        </article>
+        <!-- Footer opcional -->
+        <div class="card-footer">
+          <button class="btn">See more</button>
+        </div>
       </div>
     </div>
   </div>
